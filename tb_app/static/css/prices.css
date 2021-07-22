@@ -1,0 +1,103 @@
+main {
+    width: 100%;
+    height: 100%;
+}
+
+.main-1 {
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.align-main {
+    width: 100%;
+    height: 700px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.box-prices {
+    margin-top: 50px;
+    width: 28%;
+    height: 600px;
+    background-color: #272C2C;
+    border: solid 2px #daa520;
+    border-radius: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    box-shadow: rgba(14, 251, 133, 0.4) 5px 5px, rgba(14, 251, 133, 0.3) 10px 10px, rgba(14, 251, 133, 0.2) 15px 15px, rgba(14, 251, 133, 0.1) 20px 20px, rgba(14, 251, 133, 0.05) 25px 25px;
+}
+
+.main-title {
+    width: 100%;
+    height: 50px;
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.money {
+    width: 100%;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.functions {
+    width: 50%;
+    height: max-content;
+    margin-left: 10%;
+}
+
+.functions ul {
+    margin-top: 2%;
+    width: 100%;
+}
+
+.functions ul li {
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+    width: 100%;
+}
+
+.functions ul li img {
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    margin-right: 5%;
+}
+
+.functions ul li a {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.call-to-action {
+    margin-top: 7%;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.call-to-action button {
+    width: 200px;
+    height: 50px;
+    background-color: transparent;
+    border: solid 1px #0EFB85;
+    border-radius: 30px;
+    color: #FAFAFF;
+    cursor: pointer;
+}

@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>Plutonium Trade</title>
+{% block title %}
+{% endblock %}
+<link href="{% static 'css/base.css' %}" rel="Stylesheet">
+<link href="{% static 'media/nuclear.png' %}" rel="icon">
+
+</head>
+<body>
+
+<header class="header_Style">
+    <nav class="header_StyleLogo">
+        <a href="{% url 'trading:home' %}">
+            <div class="tb-img">
+                <img src="{% static 'media/nuclear.png' %}">
+            </div>
+            <div class="tb-text">
+                <span>P</span>lutonium <span>T</span>rade
+            </div>
+        </a>
+    </nav>
+    <nav class="header_StyleNav">
+        <a href="{% url 'trading:prices' %}">Prices</a>
+        <a href="{% url 'trading:faq' %}" class="biml">FAQ</a>
+        <a href="{% url 'trading:doc' %}" class="biml">Documentation</a>
+        <a href="{% url 'trading:affiliate' %}" class="biml">Affiliate</a>
+        <a href="{% url 'trading:login' %}" class="biml login">Account</a>
+    </nav>
+</header>
+
+{% block content %}
+{% endblock %}
+
+<hr/>
+<footer class="footer__StyledFooter-t84j8d-0 bnqVhE">
+    <section class="foot-main">
+        <a href="{% url 'trading:prices' %}">Prices</a>
+        <a href="{% url 'trading:faq' %}" class="biml">FAQ</a>
+        <a href="{% url 'trading:doc' %}" class="biml">Documentation</a>
+        <a href="{% url 'trading:affiliate' %}" class="biml">Affiliate</a>
+    </section>
+    <section class="newsletter">
+        <div>
+            <a>Subscribe to our newsletter!</a>
+            <form method="POST">
+                <input type="email" placeholder="Your Email">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+    <p>© 2021 Plutonium Trade. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

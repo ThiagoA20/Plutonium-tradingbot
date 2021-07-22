@@ -1,0 +1,4 @@
+#daa520 - Dourado
+#FAFAFF - Branco
+#1C211F - Preto
+#0EFB85 - verde

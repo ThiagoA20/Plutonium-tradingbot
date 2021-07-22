@@ -1,0 +1,22 @@
+{% load static %}
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+    <link href="{% static 'media/nuclear.png' %}" rel="icon">
+    <title>Plutonium Trade</title>
+</head>
+
+<body>
+	<section class="bgs-1">
+		<div class="mcd">
+            <div class="box-content">
+                    {% block content %}
+                    {% endblock %}
+            </div>
+		</div>
+	</section>
+</body>
+
+</html>

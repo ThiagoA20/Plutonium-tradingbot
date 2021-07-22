@@ -1,0 +1,199 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plutonium Dashboard</title>
+    <link href="{% static 'media/nuclear.png' %}" rel="icon">
+    <link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="back-container">
+        <div class="dashboard-main">
+            <div class="dash-container">
+                <div class="arrow-expand">
+                    <img src="{% static 'media/next.png' %}" class="arrow">
+                </div>
+                <div class="logo-container">
+                    <div class="center-text nav-element">
+                        <div class="text-border">
+                            <div class="element-atomic-number">94</div>
+                            <div class="tb-text">
+                                <span>Pu</span>
+                            </div>
+                            <div class="element-name">Plutonium</div>
+                            <div class="element-mass">244</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-container">
+                    <div class="nav-item nav-element">
+                        <a class="nav-text">Trade History</a>
+                        <img src="{% static 'media/history.png' %}" class="nav-image">
+                    </div>
+                    <div class="nav-item nav-element">
+                        <a class="nav-text">Notifications</a>
+                        <img src="{% static 'media/bell.png' %}" class="nav-image">
+                    </div>
+                    <div class="nav-item nav-element">
+                        <a class="nav-text">Indicators</a>
+                        <img src="{% static 'media/graphic.png' %}" class="nav-image">
+                    </div>
+                    <div class="nav-item nav-element">
+                        <a class="nav-text">Smart Jackpot</a>
+                        <img src="{% static 'media/scroll.png' %}" class="nav-image">
+                    </div>
+                </div>
+                <div class="settings-logout">
+                    <span><a href="{% url 'trading:settings' %}">Settings</a></span>
+                    <span><a href="{% url 'trading:logout' %}">Logout</a></span>
+                </div>
+            </div>
+            <div class="views-container">
+                <div class="user-container">
+                    <div class="welcome">
+                        <h2>Welcome, {{request.user}}</h2>
+                    </div>
+                    <div class="user-img">
+                        <img src="{% static 'media/user.png' %}">
+                    </div>
+                </div>
+                <div class="dash-main dash-element a1">
+                    <div class="main-contracts">
+                        <div class="main-menu">
+                            <div class="news-box"><h1>News</h1></div>
+                            <div class="objectives-box"><h1>Objectives</h1></div>
+                            <div class="simulations">
+                                <div class="simulation-box"><h1>Simulation</h1></div>
+                                <div class="comparacao-de-setores"><h1>Comparation</h1></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dash-view dash-element a2">
+                    <div class="main-contracts">
+                        <div>
+                            <a>Tipo de ordem (Compra ou venda)</a>
+                            <a>Data e hora da execução</a>
+                            <a>Quantidade de contratos</a>
+                            <a>Quantidade de indicadores</a>
+                            <a>Criptomoeda / Ação</a>
+                            <a>Lucro / Perda</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="dash-view dash-element a3">
+                    <div class="main-contracts">
+                        <div>
+                            <a>Empresas por setores (energia, saúde, Tecnologia da informação, etc)</a>
+                            <a>Whatsapp / Telegram / Discord</a>
+                            <a>Notificação de execução de ordens</a>
+                            <a>Preço de determinado ativo</a>
+                            <a>Notícias potencialmente relevantes</a>
+                            <a>Índices (DOWN JONES)</a>
+                            <a>Smart Jackpot</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="dash-view dash-element a4">
+                    <div class="main-contracts">
+                        <div>
+                            <a>Indicadores matemáticos</a>
+                            <a>Figuras gráficas</a>
+                            <a>Indices</a>
+                            <a>Notícias (Análise fundamentalista)</a>
+                            <a>Notícias (Impactos repentinos)</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="dash-view dash-element a5">
+                    <div class="main-contracts">
+                        <div class="contract-filters">
+                            <div class="filter-crypto">
+                                <div class="filter-by"><span>Filter By</span></div>
+                                <div class="filters-title"><span>Ativo</span><img src="{% static 'media/next.png' %}" class="arrow2"></div>
+                                <div class="box-search2">
+                                    <input class="contract-search2" placeholder="SELECT ATIVO">
+                                    <div class="lupa-btn2">
+                                        <span class="z1asCe2 MZy1Rb">
+                                            <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="line"></div>
+                                <div class="filters-title"><span>Strategy</span><img src="{% static 'media/next.png' %}" class="arrow2"></div>
+                                <div class="box-search2">
+                                    <input class="contract-search2" placeholder="SELECT STRATEGY">
+                                    <div class="lupa-btn2">
+                                        <span class="z1asCe2 MZy1Rb">
+                                            <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="line"></div>
+                                <div class="filters-title"><span>Operation</span></div>
+                                <div class="box-check">
+                                    <label class="check-container">
+                                        <input type="checkbox">Buy
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="check-container">
+                                        <input type="checkbox">Sell
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="second-contracts">
+                            <div class="contract-nav">
+                                <div class="search-section">
+                                    <div class="box-search">
+                                        <input class="contract-search">
+                                        <div class="lupa-btn">
+                                            <span class="z1asCe MZy1Rb">
+                                                <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                    <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <button>New Contract</button>
+                                </div>
+                                <div class="filters">
+                                    <div class="filter-item">Amount</div>
+                                    <div class="filter-item">Order</div>
+                                    <div class="filter-item">Indicators</div>
+                                    <div class="filter-item">Contribuitors</div>
+                                    <div class="filter-item">Date init</div>
+                                    <div class="filter-item">Date Creation</div>
+                                    <!-- Strategy, Ativo -->
+                                </div>
+                            </div>
+                            <div id="list-wrapper" class="list-wrapper"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="{% static 'js/dash.js' %}"></script>
+<script src="`{% static '../../node_modules/chart.js/dist/chart.js' %^}"></script>
+<script>
+    let ctx = document.getElementById('mychart')
+    let Chart = require("chart.js")
+    let myChart = new Chart(ctx, {
+        type: "line",
+    })
+</script>
+</html>
+
+<!-- gráfico, relatorio de operacoes, carteira com saldo total e gráfico de círculo mostrando  -->
