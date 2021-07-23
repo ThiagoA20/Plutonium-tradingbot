@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Plutonium Trade | Register</title>
+    <link href="{% static 'css/register.css' %}" rel="Stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="form-box">
+        <div class="messages">
+            {% for message in messages %}
+                <p id="message">{{message}}</p>
+            {% endfor %}
+        </div>
+        <form id="login" class="input-group" action="" method="POST">
+            {% csrf_token %}
+            {{form.username}}
+            {{form.email}}
+            {{form.password1}}
+            {{form.password2}}
+            <Button type="submit" name="btnform1">Register</Button>
+        </form>
+        <h5>Already have an account? <a href="{% url 'tb_app:login' %}">Sign in</a></h5>
+    </div>
+{% endblock %}

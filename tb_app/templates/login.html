@@ -1,91 +1,26 @@
+{% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-
-<html>
-
-<head>
-    <meta charset="UTF-8">
+{% block title %}
     <title>Plutonium Trade | login</title>
-    <link href="{% static 'css/login.css' %}" rel="stylesheet">
-    <link href="{% static 'media/nuclear.png' %}" rel="icon">
-</head>
+    <link href="{% static 'css/login.css' %}" rel="Stylesheet">
+{% endblock %}
 
-<body>
-    <div class="hero">
-        <header class="header_Style">
-            <nav class="header_StyleLogo">
-                <a href="{% url 'trading:home' %}">
-                    <div class="tb-img">
-                        <img src="{% static 'media/nuclear.png' %}">
-                    </div>
-                    <div class="tb-text">
-                        <span>P</span>lutonium <span>T</span>rade
-                    </div>
-                </a>
-            </nav>
-            <nav class="header_StyleNav">
-                <a href="#">Prices</a>
-                <a href="#" class="biml">FAQ</a>
-                <a href="#" class="biml">Documentation</a>
-                <a href="{% url 'trading:login' %}" class="biml login">Account</a>
-            </nav>
-        </header>
-        <div class="form-box">
-            <div class="button-box">
-                <div class="btn" id="btn"></div>
-                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
-                <button type="button" class="toggle-btn" onclick="register()">Register</button>
-            </div>
-            <form id="login" class="input-group" action="" method="POST">
-                {% csrf_token %}
-                <input type="text" name='username' placeholder="Username"><br>
-                <input type="password" name="password" placeholder="Password"><br>
-
-                <h5><a href="{% url 'trading:reset_password' %}">Forgot Password?</a></h5><br><br>
-                
-                <Button type="submit" name="btnform1">Login</Button>
-                <div class="messages">
-                    {% for message in messages %}
-                        <p id="message">{{message}}</p>
-                    {% endfor %}
-                </div>
-            </form>
-            <Form method="POST" id="register" action="" class="input-group">
-                {% csrf_token %}
-                {{form.username}}<br>
-                {{form.email}}<br>
-                {{form.password1}}<br>
-                {{form.password2}}<br><br>
-                <div class="checkboxes">
-                    <label for="ext-comp-1035"><input type="checkbox"><span>by registering you agree to the terms of <a href="#">privacy and service</a></span></label>
-                </div><br><br>
-                <Button type="submit" name="btnform2">Register</Button>
-            </Form>
+{% block content %}
+    <div class="form-box">
+        <div class="messages">
+            {% for message in messages %}
+                <p id="message">{{message}}</p>
+            {% endfor %}
         </div>
+        <form id="login" class="input-group" action="" method="POST">
+            {% csrf_token %}
+            <input name="username" type="text" placeholder="Username">
+            <input name="password" type="password" placeholder="Password">
+                
+            <Button type="submit" name="btnform1">Login</Button>
+        </form>
+        <h5><a href="{% url 'tb_app:reset_password' %}">Forgot Password?</a></h5>
+        <h5>Don't have an account? <a href="{% url 'tb_app:register' %}">Sign up</a></h5>
     </div>
-    <script>
-        var x = document.getElementById("login")
-        var y = document.getElementById("register")
-        var z = document.getElementById("btn")
-
-        function register(){
-            x.style.left = "-400px"
-            x.style.display = 'none'
-            y.style.left = "60px"
-            y.style.display = 'block'
-            z.style.left = "110px"
-            z.style.background = "linear-gradient(to left, #0EFB85, #1C211F)"
-        }
-
-        function login(){
-            x.style.left = "60px"
-            x.style.display = 'block'
-            y.style.left = "460px"
-            y.style.display = 'none'
-            z.style.left = "0px"
-            z.style.background = "linear-gradient(to right, #0EFB85, #1C211F)"
-        }
-    </script>
-</body>
-</html>
+{% endblock %}

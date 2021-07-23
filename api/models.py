@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models.base import Model
+from django.db.models.deletion import CASCADE
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.utils.timezone import now
@@ -95,7 +97,7 @@ class Deal(models.Model):
     def __str__(self):
         return self.title
 
-class UserDetails():
-    name = models.ForeignKey(User, on_delete=models.CASCADE)
+class UserDetails(models.Model):
+    username = models.ForeignKey(User, on_delete=CASCADE)
     balance = models.FloatField()
     earnings = models.FloatField()
